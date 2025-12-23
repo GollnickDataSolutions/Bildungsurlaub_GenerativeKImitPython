@@ -34,9 +34,9 @@ map_chain = RunnableParallel(
 )
 
 # %% Invoke
-topic = "What is the meaning of life?"
+topic = "Was ist der Sinn des Lebens?"
 result = map_chain.invoke({"topic": topic})
 # %% Print
 from pprint import pprint
-pprint(result, width=40)
+pprint(result, width=60)
 # %%

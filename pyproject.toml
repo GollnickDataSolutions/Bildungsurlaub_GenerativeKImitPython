@@ -20,10 +20,8 @@ dependencies = [
     "langgraph>=0.2.39",
     "matplotlib>=3.9.2",
     "python-dotenv>=1.0.1",
-    "seaborn>=0.13.2",
     "rich>=13.9.4",
     "markdown>=3.7",
-    "streamlit>=1.50.0",
     "sentencepiece>=0.2.1",
     "pdf2image>=1.17.0",
     "pillow>=11.0.0",
@@ -33,4 +31,12 @@ dependencies = [
     "pytube>=15.0.0",
     "wikipedia>=1.4.0",
     "faiss-cpu>=1.13.0",
+    "unstructured>=0.18.21",
+    "python-magic>=0.4.27",
+    "python-pptx>=1.0.2",
+]
+
+[tool.uv.workspace]
+members = [
+    "scripts_BU/webapp",
 ]
