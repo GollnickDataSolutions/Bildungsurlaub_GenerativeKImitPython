@@ -10,7 +10,6 @@ dependencies = [
     "langchain-anthropic>=0.3.10",
     "langchain-community>=0.3.3",
     "langchain-experimental>=0.3.3",
-    "langchain-groq>=0.2.0",
     "langchain-faiss>=0.1.1",
     "langchain-ollama>=0.3.0",
     "langchain-pymupdf4llm>=0.4.1",
@@ -37,4 +36,5 @@ dependencies = [
     "google-genai==1.46.0",
     "pydantic>=2.9.0",
     "pydantic>=2.10",
+    "langchain-groq>=0.3.1",
 ]
