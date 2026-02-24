@@ -14,7 +14,7 @@ dependencies = [
     "langchain-ollama>=0.3.0",
     "langchain-pymupdf4llm>=0.4.1",
     "langchain-huggingface>=0.1.2",
-    "langchain-openai>=0.2.3",
+    "langchain-openai==1.1.10",
     "langchain>=0.3.4",
     "langgraph>=0.2.39",
     "matplotlib>=3.9.2",
