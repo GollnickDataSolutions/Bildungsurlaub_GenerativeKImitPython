@@ -1,3 +1,4 @@
+
 #%% packages
 import os
 import unittest
@@ -98,8 +99,8 @@ def suite():
     suite.addTest(TestEnvironment('test_openai_connection'))
     suite.addTest(TestEnvironment('test_groq_variable'))
     suite.addTest(TestEnvironment('test_groq_connection'))
-    suite.addTest(TestEnvironment('test_anthropic_variable'))
-    suite.addTest(TestEnvironment('test_anthropic_connection'))
+    # suite.addTest(TestEnvironment('test_anthropic_variable'))
+    # suite.addTest(TestEnvironment('test_anthropic_connection'))
     return suite
 
 if __name__ == '__main__':

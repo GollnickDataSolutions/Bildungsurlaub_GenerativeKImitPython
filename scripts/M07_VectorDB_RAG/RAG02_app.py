@@ -1,7 +1,7 @@
 #%% packages
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_chroma import Chroma
 from langchain_core.output_parsers import StrOutputParser
 import streamlit as st

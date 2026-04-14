@@ -4,7 +4,7 @@ from langchain_openai import ChatOpenAI
 from langchain_openai.embeddings import OpenAIEmbeddings
 from dotenv import load_dotenv,find_dotenv
 from langchain_community.document_loaders import Docx2txtLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitter import RecursiveCharacterTextSplitter
 load_dotenv(find_dotenv(usecwd=True))
 from pprint import pprint
 from langchain_chroma import Chroma
