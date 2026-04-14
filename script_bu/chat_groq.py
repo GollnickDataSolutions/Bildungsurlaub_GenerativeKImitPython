@@ -18,3 +18,6 @@ model = ChatGroq(
     # other params...
 )
 # %%
+res = model.invoke("Was ist KI?")
+# %%
+res.model_dump()
