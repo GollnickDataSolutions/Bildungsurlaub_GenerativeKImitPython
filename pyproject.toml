@@ -45,4 +45,6 @@ dependencies = [
     "langchain-chroma>=1.1.0",
     "sqlmodel>=0.0.37",
     "psycopg2>=2.9.11",
+    "langchain-openrouter>=0.2.1",
+    "fastmcp>=3.2.4",
 ]
