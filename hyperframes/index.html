@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Product Intro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Serif+4:opsz,wght@12..72,400;12..72,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f1c2e;
+        --navy: #293241;
+        --indigo: #3d5a80;
+        --sky: #98c1d9;
+        --frost: #e0fbfc;
+        --accent: #ee6c4d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        font-family: "Space Grotesk", "Source Serif 4", system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--frost);
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #product-intro {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: radial-gradient(circle at 30% 20%, var(--indigo), var(--bg));
+      }
+
+      video,
+      audio {
+        display: block;
+      }
+
+      #bg-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.05) contrast(1.05);
+        transform-origin: center;
+      }
+
+      .scene.clip {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 120px 160px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 80px;
+      }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(9, 18, 32, 0.85),
+          rgba(41, 50, 65, 0.6)
+        );
+        z-index: 1;
+      }
+
+      .scene-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 32px;
+        width: 60%;
+        color: var(--frost);
+      }
+
+      .eyebrow {
+        font-size: 28px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--sky);
+      }
+
+      .title {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 120px;
+        line-height: 1.05;
+        margin: 0;
+      }
+
+      .subtitle {
+        font-family: "Source Serif 4", serif;
+        font-size: 36px;
+        line-height: 1.4;
+        max-width: 780px;
+        margin: 0;
+        color: rgba(224, 251, 252, 0.92);
+      }
+
+      .cta-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        padding: 18px 32px;
+        border-radius: 999px;
+        background: rgba(238, 108, 77, 0.15);
+        border: 1px solid rgba(238, 108, 77, 0.5);
+        color: var(--frost);
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      .cta-chip::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 12px rgba(238, 108, 77, 0.8);
+      }
+
+      .accent-column {
+        position: relative;
+        z-index: 2;
+        width: 25%;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .stat-card {
+        padding: 24px;
+        border-radius: 24px;
+        background: rgba(41, 50, 65, 0.65);
+        border: 1px solid rgba(152, 193, 217, 0.2);
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+      }
+
+      .stat-card h3 {
+        margin: 0 0 8px;
+        font-size: 54px;
+        color: var(--accent);
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .stat-card p {
+        margin: 0;
+        font-size: 24px;
+        color: var(--sky);
+      }
+
+      .pulse-ring {
+        position: absolute;
+        inset: auto auto 80px -120px;
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(238, 108, 77, 0.18),
+          rgba(238, 108, 77, 0)
+        );
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="product-intro"
+      data-composition-id="product-intro"
+      data-width="1920"
+      data-height="1080"
+      data-start="0"
+    >
+      <video
+        id="bg-video"
+        class="clip"
+        data-start="0"
+        data-duration="10"
+        data-track-index="0"
+        src="https://cdn.coverr.co/videos/coverr-digital-product-innovation-5133/1080p.mp4"
+        muted
+        playsinline
+        crossorigin="anonymous"
+      ></video>
+
+      <div class="scene clip" id="hero-scene" data-start="0" data-duration="10" data-track-index="1">
+        <div class="overlay" aria-hidden="true"></div>
+        <div class="pulse-ring" aria-hidden="true"></div>
+        <div class="scene-content">
+          <p class="eyebrow">Launch Update</p>
+          <h1 class="title">Aurora HUD</h1>
+          <p class="subtitle">
+            Die neue Steuerzentrale für produktive Teams – klare Insights, adaptive
+            Automationen und ein obsessiver Fokus auf Geschwindigkeit.
+          </p>
+          <div class="cta-chip">Jetzt testen</div>
+        </div>
+        <div class="accent-column">
+          <div class="stat-card">
+            <h3>10s</h3>
+            <p>Setup bis zur ersten Automation</p>
+          </div>
+          <div class="stat-card">
+            <h3>+48%</h3>
+            <p>Mehr Output in Pilot-Teams</p>
+          </div>
+        </div>
+      </div>
+
+      <audio
+        id="bg-music"
+        class="clip"
+        data-start="0"
+        data-duration="10"
+        data-track-index="2"
+        data-volume="0.8"
+        src="https://cdn.pixabay.com/download/audio/2023/02/28/audio_7a6870b8d2.mp3?filename=digital-sunrise-13368.mp3"
+        crossorigin="anonymous"
+      ></audio>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.from("#bg-video", { scale: 1.08, duration: 10, ease: "none" }, 0);
+      tl.from(".overlay", { opacity: 0, duration: 0.8, ease: "power2.out" }, 0.1);
+      tl.from(".pulse-ring", { opacity: 0, scale: 0.7, duration: 1.2, ease: "power3.out" }, 0.2);
+      tl.from(
+        ".eyebrow",
+        { y: 40, opacity: 0, duration: 0.6, ease: "power3.out" },
+        0.35
+      );
+      tl.from(
+        ".title",
+        { y: 50, opacity: 0, duration: 0.7, ease: "expo.out" },
+        0.55
+      );
+      tl.from(
+        ".subtitle",
+        { y: 40, opacity: 0, duration: 0.6, ease: "power2.out" },
+        0.8
+      );
+      tl.from(
+        ".cta-chip",
+        { y: 30, opacity: 0, duration: 0.45, ease: "back.out(1.5)" },
+        1.1
+      );
+      tl.from(
+        ".accent-column",
+        { x: 40, opacity: 0, duration: 0.7, ease: "power3.out" },
+        0.9
+      );
+      tl.from(
+        ".stat-card:nth-child(2)",
+        { y: 30, opacity: 0, duration: 0.5, ease: "sine.out" },
+        1.2
+      );
+      tl.to(
+        ".scene-content, .accent-column, .overlay",
+        { opacity: 0, duration: 0.9, ease: "power2.in" },
+        9.1
+      );
+
+      window.__timelines["product-intro"] = tl;
+    </script>
+  </body>
+</html>

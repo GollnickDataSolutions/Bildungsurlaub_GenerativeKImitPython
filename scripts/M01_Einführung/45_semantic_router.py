@@ -1,5 +1,6 @@
 #%% packages
 from langchain_core.prompts import ChatPromptTemplate
+
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.utils.math import cosine_similarity
@@ -58,9 +59,9 @@ def my_prompt_router(input: str):
     
 
 #%% Testing the Router
-query = "What is the square root of 16?"
+# query = "What is the square root of 16?"
 # query = "What happened during the french revolution?"
-# query = "Who composed the moonlight sonata?"
+query = "Who composed the moonlight sonata?"
 
 chain = my_prompt_router(query)
 print(chain.invoke(query))
