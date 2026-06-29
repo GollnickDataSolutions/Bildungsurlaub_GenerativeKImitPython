@@ -6,6 +6,10 @@ import openai
 import anthropic
 import groq
 
+#%% 
+a = 2
+print(f"Der Wert von a laut")
+
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv(usecwd=True))
 

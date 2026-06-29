@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 MODEL_NAME = "gpt-4o-mini"
 model = ChatOpenAI(model=MODEL_NAME, temperature=0)
 
+
 class ChainOfThoughtResponse(BaseModel):
     equation: str = Field(description="The answer to the user's question")
 
