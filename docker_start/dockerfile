@@ -1,0 +1,20 @@
+# 1. Basis-Image wählen
+FROM python:3.11-slim
+
+# 2. Arbeitsverzeichnis im Container festlegen
+WORKDIR /app
+
+# 3. Abhängigkeiten zuerst kopieren (nutzt Docker-Caching optimal)
+COPY requirements.txt .
+
+# 4. Abhängigkeiten installieren
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 5. Restlichen Anwendungscode kopieren
+COPY . .
+
+# 6. Port dokumentieren, auf dem die App läuft
+EXPOSE 5000
+
+# 7. Startbefehl für den Container
+CMD ["python", "app.py"]
