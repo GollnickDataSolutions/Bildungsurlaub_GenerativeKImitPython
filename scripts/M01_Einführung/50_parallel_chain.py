@@ -1,14 +1,18 @@
 
 #%% packages
-from langchain_groq import ChatGroq
+from langchain_openrouter import ChatOpenRouter
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableParallel
 from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
+#%% Bert's Norton360 Problem
+import truststore
+truststore.inject_into_ssl()
+
 #%% Model Instance
-model = ChatGroq(model="openai/gpt-oss-120b", temperature=0)
+model = ChatOpenRouter(model="google/gemini-3.5-flash-lite", temperature=0)
 
 #%% Prepare Prompts
 # example: style variations (friendly, polite) vs. (savage, angry)

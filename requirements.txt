@@ -4,6 +4,7 @@ langchain-community
 langchain-experimental
 langchain-groq
 langchain-huggingface
+langchain-tavily
 langchain-openai
 langchain
 langgraph

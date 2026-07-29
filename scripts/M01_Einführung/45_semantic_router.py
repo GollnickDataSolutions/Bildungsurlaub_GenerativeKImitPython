@@ -5,7 +5,11 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.utils.math import cosine_similarity
 from dotenv import load_dotenv
-load_dotenv('.env')
+load_dotenv()
+
+#%% Bert's Norton360 Problem
+import truststore
+truststore.inject_into_ssl()
 # %% Model and Embeddings Setup
 model = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 embeddings = OpenAIEmbeddings()
@@ -43,6 +47,10 @@ chains = [chain_math, chain_music, chain_history]
 
 # %% Create Prompt Embeddings
 chain_embeddings = embeddings.embed_documents(["math", "music", "history"])
+
+#%%
+len(chain_embeddings[1])
+
 #%%
 print(len(chain_embeddings[0]))
 
@@ -59,9 +67,9 @@ def my_prompt_router(input: str):
     
 
 #%% Testing the Router
-# query = "What is the square root of 16?"
+query = "What is the square root of 16?"
 # query = "What happened during the french revolution?"
-query = "Who composed the moonlight sonata?"
+# query = "Who composed the moonlight sonata?"
 
 chain = my_prompt_router(query)
 print(chain.invoke(query))
