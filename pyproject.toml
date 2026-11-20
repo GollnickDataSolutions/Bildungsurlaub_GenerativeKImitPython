@@ -3,7 +3,7 @@ name = "GenerativeKImitPython"
 version = "1.1"
 description = "Das ist unser Repository für den Kurs 'Generative KI mit Python'"
 readme = "README.md"
-requires-python = ">=3.11,3.15"
+requires-python = ">=3.11,<3.15"
 dependencies = [
     "chardet>=5.2.0",
     "ipykernel>=6.29.5",
@@ -46,4 +46,5 @@ dependencies = [
     "docling>=2.102.1",
     "typesafe-sdk>=0.7.1",
     "tabulate>=0.10.0",
+    "langchain-openai>=1.8.1",
 ]
